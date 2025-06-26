@@ -18,9 +18,14 @@ bool MinHookInit() {
 
 void __fastcall hProcessEvent(UObject* Context, UFunction* Function, void* Parms) {
 	__try {
-		if (!Context || !Function || !Function->VTable) {
+		if (!Context || !Function || !Function->VTable) 
+		{
 			return oProcessEvent(Context, Function, Parms);
 		}
+		else {
+			return oProcessEvent(Context, Function, Parms);
+		}
+		return oProcessEvent(Context, Function, Parms);
 	}
 	__except (EXCEPTION_EXECUTE_HANDLER) {
 		MessageBoxA(0, "Due to Limitation Testing My Cheeto, This Cheeto is Crashed!!!", "HottaTestCheat", MB_OK | MB_ICONERROR);
