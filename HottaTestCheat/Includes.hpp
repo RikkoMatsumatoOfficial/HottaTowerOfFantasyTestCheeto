@@ -16,7 +16,8 @@ bool MinHookInit() {
 	}
 }
 
-void __fastcall hProcessEvent(UObject* Context, UFunction* Function, void* Parms) {
+void __fastcall hProcessEvent(UObject* Context, UFunction* Function, void* Parms) //It will be Fully Bypass Error 0xdeadc0de :D
+{
 	__try {
 		if (!Context || !Function || !Function->VTable) 
 		{
