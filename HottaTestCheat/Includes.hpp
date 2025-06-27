@@ -28,7 +28,7 @@ void __fastcall hProcessEvent(UObject* Context, UFunction* Function, void* Parms
 		return oProcessEvent(Context, Function, Parms);
 	}
 	__except (EXCEPTION_EXECUTE_HANDLER) {
-		MessageBoxA(0, "Due to Limitation Testing My Cheeto, This Cheeto is Crashed!!!", "HottaTestCheat", MB_OK | MB_ICONERROR);
+		MessageBoxA(0, "Due to Limitation of this Game(AntiCheat Basic Level with AntiDebugger), This Cheeto is Crashed!!!", "HottaTestCheat", MB_OK | MB_ICONERROR);
 		exit(45);
 	}
 	
