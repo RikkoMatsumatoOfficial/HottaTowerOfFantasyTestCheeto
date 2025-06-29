@@ -16,20 +16,26 @@ bool MinHookInit() {
 	}
 }
 
-void __fastcall hProcessEvent(UObject* Context, UFunction* Function, void* Parms) //It will be Fully Bypass Error 0xdeadc0de :D
-{
-	__try {
+void __fastcall hProcessEvent(UObject* Context, UFunction* Function, void* Parms) {
+	try 
+	{
 		if (!Context || !Function || !Function->VTable) 
 		{
+			cout << "Called Successfully!!!" << endl;
 			return oProcessEvent(Context, Function, Parms);
 		}
-		else {
+		else 
+		{
+			cout << "Called Successfully!!!" << endl;
 			return oProcessEvent(Context, Function, Parms);
 		}
+		cout << "Called Successfully!!!!" << endl;
 		return oProcessEvent(Context, Function, Parms);
 	}
-	__except (EXCEPTION_EXECUTE_HANDLER) {
-		MessageBoxA(0, "Due to Limitation of this Game(AntiCheat Basic Level with AntiDebugger), This Cheeto is Crashed!!!", "HottaTestCheat", MB_OK | MB_ICONERROR);
+	catch(std::exception& cx) 
+	{
+		const char* zjhn = cx.what();
+		MessageBoxA(0, zjhn, "HottaTestCheat", MB_OK | MB_ICONERROR);
 		exit(45);
 	}
 	
